@@ -31,3 +31,34 @@ app.get("/sbsbdasb", function(req, res){
   res.send("hello world!");
 });
 ```
+### 模板引擎
+ejs, jade是有名的framework, 在这里图简单就用ejs.
+
+- 下面就是ejs的code
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href = "/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title></p>
+  </body>
+</html>
+```
+当用`res.render("index", {title: "Express"});` 时模板引擎会把title替换成Express.
+
+- ejs标签系统非常简单只有以下三种标签
+  - `<% code %>` js代码
+  - `<%= code %>` 显示替换过的html内容
+  - `<%- code %>` 显示原始的html内容
+
+
+### 路由规划
+- `/` 首页
+- `/login` user login: only for user not in
+- `/reg` user register: only for user not in
+- `/post` post essay: only for user already in
+- `/logout` user logout only for user already in
