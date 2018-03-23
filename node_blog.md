@@ -62,3 +62,13 @@ ejs, jade是有名的framework, 在这里图简单就用ejs.
 - `/reg` user register: only for user not in
 - `/post` post essay: only for user already in
 - `/logout` user logout only for user already in
+
+### 页面规划
+因为页面的主体部分内容相同，利用ejs可以按照以下方式写。
+
+```html
+<%- include header %>
+Page Content
+<%- include footer %>
+```
+- `header.ejs`和`footer.ejs`可以直接流用. 只要改变Page Content部分就可以了.
